@@ -23,5 +23,5 @@ jobs:
 
     - name: Lint Python code
       run: |
-        fft.ipynb
+        nbqa pylint fft.ipynb
     
