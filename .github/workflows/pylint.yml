@@ -22,6 +22,5 @@ jobs:
 
     - name: Lint Python code
       run: |
-        # Lint all Python files in the repository
         fft.ipynb
         pylint .
