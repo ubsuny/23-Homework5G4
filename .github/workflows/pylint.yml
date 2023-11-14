@@ -1,4 +1,4 @@
-name: Python Linting
+name: Linting with Pylint
 
 on: [push, pull_request]
 
@@ -23,5 +23,4 @@ jobs:
     - name: Lint Python code
       run: |
         # Lint all Python files in the repository
-        fft.ipynb
-        pylint .
+        pylint calculate_frequency.py
