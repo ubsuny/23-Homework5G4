@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from calculate_frequency import find_peak_frequency
+from calculate_frequency import calculate_frequencies
 
 @pytest.fixture
 def sample_data():
@@ -13,9 +13,11 @@ def sample_data():
     
     return fft_output, sampling_rate
 
-def test_find_peak_frequency(sample_data):
+def test_calculate_frequencies(sample_data):
     fft_output, sampling_rate = sample_data
-    peak_frequency = find_peak_frequency(fft_output, sampling_rate)
+    frequencies = calculate_frequencies(fft_output, sampling_rate)
     
-    assert isinstance(peak_frequency, float)
-    assert 0 <= peak_frequency <= sampling_rate/2
+    assert isinstance(frequencies, np.ndarray)
+    assert len(frequencies) == len(fft_output)
+    assert frequencies[0] == 0  # DC component
+    assert frequencies[-1] == sampling_rate/2  # Nyquist frequency
