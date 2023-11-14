@@ -17,4 +17,3 @@ def find_peak_frequency(fft_output, sampling_rate):
     peak_frequency = positive_frequencies[peak_index]
 
     return peak_frequency
-
