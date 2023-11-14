@@ -1,4 +1,4 @@
-name: Linting Workflow
+name: Linting with Flake
 
 on:
   push:
