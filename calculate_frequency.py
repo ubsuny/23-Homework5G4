@@ -10,4 +10,8 @@ def find_peak_frequency(fft_output, sampling_rate):
     magnitude_spectrum = np.abs(fft_output[:len(fft_output)//2])
 # Find the index of the maximum amplitude
     peak_index = np.argmax(magnitude_spectrum)
+# Get the corresponding frequency
+    peak_frequency = positive_frequencies[peak_index]
+
+    return peak_frequency
 
