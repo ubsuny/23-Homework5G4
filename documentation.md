@@ -54,27 +54,34 @@ This code segment calculates the FFT of the last 512 values in the 'value' colum
 
 <img width="593" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/0dc544c2-5c3f-452c-a5b7-1b932dd4455e">
 
-# Padding the data:
+# Padding and windowing the data:
 We used the code below:
 
-y = df['value']
-N = len(y)
-log2N = math.log(N,2)
-next_pow_of_2 = int(log2N) + 1
-if log2N - int(log2N) > 0.0 :
-    ypads = np.full( 2**( next_pow_of_2) - N, 0, dtype=np.double)
-    y = np.concatenate( (y, ypads) )
-x = np.arange(len(y))
-N = len(y)
+<img width="508" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/5ae67886-251f-4182-9b45-05abc1e90ef5">
 
+
+# Padding
 This code ensures that the length of the 'value' column (y) is a power of 2 by padding it with zeros if necessary. This operation may be useful in the context of algorithms or computations that are optimized for inputs with a length that is a power of 2, such as some FFT (Fast Fourier Transform) implementations.
 
 # Windowing
-# Data used
-window = 1 - 1 * np.cos(2 * np.pi * x / (len(y) - 1))
-y_window = y * window
-plt.plot(y_window)
 The code applies a Hann window to the time series data represented by the 'value' column in the DataFrame df. The Hann window is a type of tapering function often used in signal processing to reduce spectral leakage when performing operations like the Fast Fourier Transform (FFT). It gradually reduces the amplitude of data points toward the edges, smoothing the data and minimizing artifacts introduced by abrupt transitions at the edges of the signal.
+
+
+# Plot FFT after applying Hann window:
+<img width="326" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/c8787007-5c93-4bab-8a30-1bf611ac1d7f">
+
+the code applies the FFT to the time series data after applying a Hann window, calculates the power spectrum, and then plots the result on a logarithmic scale. This visualization helps analyze the frequency content of the signal, particularly emphasizing lower-amplitude components.
+
+<img width="432" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/9f853269-57ff-401a-b496-7661c33b5d09">
+
+# Inverse FFT
+<img width="334" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/9ba82c6d-b549-44d7-a6d1-e0eeb3b14f57">
+the code visualizes the frequency content of both the original and filtered signals in the time domain after applying a filtering operation in the frequency domain using the FFT and IFFT. The logarithmic scale on the y-axis is often used to emphasize lower-amplitude components.
+
+# Plot of filtered and raw data
+<img width="529" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/ad8ad94f-995e-404a-8a9a-48cfe35eb608">
+
+
 
 
 
