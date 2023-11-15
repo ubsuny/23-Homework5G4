@@ -1,6 +1,6 @@
 import numpy as np
 import scipy.signal as signal
-import pandas as pd
+
 
 def fft(x):
     """
@@ -12,7 +12,7 @@ def fft(x):
     Returns
     -------
     array_like
-        A complex vector of the same length as x containing the FFT coefficients
+    A complex vector having length as x containing FFT
     """
     N = len(x)
     if N <= 1:
@@ -24,6 +24,7 @@ def fft(x):
     odd = fft(x[1::2])
     return np.array([even[k] + np.exp(-2j * np.pi * k / N) * odd[k] for k in range(N // 2)] +
                     [even[k] - np.exp(-2j * np.pi * k / N) * odd[k] for k in range(N // 2)])
+
 
 def discrete_transform(data):
     """
@@ -44,7 +45,7 @@ def discrete_transform(data):
             angle = 2 * np.pi * k * j / N
             transform[k] += data[j] * np.exp(1j * angle)
     return transform
-    
+
 
 def find_peak_frequency(X):
     """
