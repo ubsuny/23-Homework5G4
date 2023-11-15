@@ -105,11 +105,6 @@ We used Flake8 for linting our codes. Initially, Flake8 did execute due to the f
 # Bibliography:
 1. [Wikipedia](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
 2. [Global Monitoring](https://gml.noaa.gov/)
-3. []()
-4. []()
-5. []()
-6. []()
-7. 
 
 
 
