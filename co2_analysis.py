@@ -12,7 +12,7 @@ def fft(x):
     Returns
     -------
     array_like
-    A complex vector of same length as x containing FFT coefficients
+    A complex vector having length as x containing FFT
     """
     N = len(x)
     if N <= 1:
