@@ -90,8 +90,11 @@ This code visualizes the frequency content of both the original and filtered sig
 We used Flake8 for linting our codes. Initially, Flake8 did execute due to the failure to maintain the standard, however, following the suggestion and removing the errors, we linted our **CO2_analysis.py** and **calculate_frequency.py** successfully. Flake8 doesn't give a rating the way Pylint shows rather it shows whether our file was successfully linted or not.  
 **These are the initial errors**
 
+<img width="550" alt="image" src="https://github.com/ubsuny/23-Homework5G4/blob/main/Image/Screenshot%202023-11-14%20at%2010.46.27%20PM.png">
+
 **This is the final outcome:**
 
+<img width="550" alt="image" src="https://github.com/ubsuny/23-Homework5G4/blob/main/Image/Screenshot%202023-11-14%20at%2012.07.29%20PM.png">
 
 # Unit Testing
 
