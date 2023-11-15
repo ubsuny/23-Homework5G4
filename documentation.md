@@ -45,6 +45,18 @@ This line of code is computing the FFT of the most recent 512 values in the 'val
 
 <img width="500" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/aa7a6640-4ac9-4de7-a663-79ba47fcdb65">
 
+# The function that calculates the actual frequency in useful units:
+
+We used the code below
+<img width="556" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/8ee29c64-53d1-4a6b-81e4-ee3ee8141256">
+
+This code segment calculates the FFT of the last 512 values in the 'value' column, computes the corresponding frequencies, and then plots the frequency spectrum using Matplotlib with a logarithmic y-scale for better visibility of amplitudes. The resulting plot provides insights into the frequency components present in the time series data.
+
+<img width="593" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/0dc544c2-5c3f-452c-a5b7-1b932dd4455e">
+
+
+
+
 
 
 
