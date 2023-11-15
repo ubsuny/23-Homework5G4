@@ -27,4 +27,4 @@ jobs:
         pip install flake8
 
     - name: Lint Python file
-      run: flake8 calculate_frequency.py co2_analysis.py
+      run: flake8 --max-line-length=100 calculate_frequency.py co2_analysis.py
