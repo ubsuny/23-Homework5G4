@@ -1,20 +1,21 @@
-# FFT
+# Fast Fourier Transform (FFT)
 
-The Fast Fourier Transform (FFT) is an algorithm for computing the Discrete Fourier Transform (DFT) and its inverse. The DFT is a mathematical transformation that converts a sequence of complex numbers (such as a signal in the time domain) into another sequence of complex numbers (its representation in the frequency domain).
+The Fast Fourier Transform (FFT) is an algorithm for computing the Discrete Fourier Transform (DFT) and its inverse. The DFT is a mathematical transformation that converts a sequence of complex numbers (such as a signal in the time domain) into another sequence of complex numbers (its representation in the frequency domain).[Wikipedia (1)](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
 
 # Data source:
-We have taken the FFT of CO2/methane data of the most recent monthly average CO2 data. 
-https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_bme_surface-flask_1_ccgg_month.txt 
+We have taken the FFT of CO2/methane data of the most recent monthly average CO2 data from [Globa Monitoring Laboratory (2)](https://gml.noaa.gov/). 
+This dataset contains the area of the Bermuda Triangle. Link to the dataset is https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_bme_surface-flask_1_ccgg_month.txt 
 # Preparing the data for taking FFT
 We imported the data station by using pandas. Next, we used the code below:
-
-# df['date'] = pd.to_datetime(df[['year','month']].assign(day=1)).dt.to_period('M') 
+```
+df['date'] = pd.to_datetime(df[['year','month']].assign(day=1)).dt.to_period('M')
+```
 This code takes the 'year' and 'month' columns from the DataFrame, adds a 'day' column with a constant value of 1, converts these three columns into a datetime object, and then converts that datetime object into a period object representing months. The result is stored in a new 'date' column in the original DataFrame.
 The plot is given below
 <img width="619" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/7870893c-ff6a-4a12-8c38-972753bb8eb7">
 # Taking FFT
 We used the code below:
-
+```
 def discrete_transform(data):
     """Return Discrete Fourier Transform (DFT) of a complex data vector"""
     N = len(data)
@@ -35,10 +36,12 @@ def fft(x):
     odd =  fft(x[1::2])
     return np.array( [even[k] + np.exp(-2j*np.pi*k/N)*odd[k] for k in range(N//2)] + \
                      [even[k] - np.exp(-2j*np.pi*k/N)*odd[k] for k in range(N//2)] )
+```
 
 The code uses recursion to efficiently compute the FFT. It divides the problem into smaller subproblems and then combines the results, reducing the overall complexity compared to the straightforward DFT computation. The algorithm takes advantage of the periodicity and symmetry properties of the Fourier transform to achieve a faster computation.
-
+```
 # X= fft(df['value'][-512:])
+```
 This line of code is computing the FFT of the most recent 512 values in the 'value' column of your DataFrame df, and the result is stored in the variable X. The FFT will provide a representation of the frequency components present in the time series data. This operation is often used in signal processing and time series analysis to analyze the frequency content of a signal.
 
 # Plot of FFT of Monthly Average CO2 Concentration
@@ -76,7 +79,8 @@ the code applies the FFT to the time series data after applying a Hann window, c
 
 # Inverse FFT
 <img width="334" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/9ba82c6d-b549-44d7-a6d1-e0eeb3b14f57">
-the code visualizes the frequency content of both the original and filtered signals in the time domain after applying a filtering operation in the frequency domain using the FFT and IFFT. The logarithmic scale on the y-axis is often used to emphasize lower-amplitude components.
+
+This code visualizes the frequency content of both the original and filtered signals in the time domain after applying a filtering operation in the frequency domain using the FFT and IFFT. The logarithmic scale on the y-axis is often used to emphasize lower-amplitude components.
 
 # Plot of filtered and raw data
 <img width="529" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/ad8ad94f-995e-404a-8a9a-48cfe35eb608">
