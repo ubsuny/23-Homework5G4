@@ -65,7 +65,7 @@ We used the code below:
 
 
 # Padding
-This code ensures that the length of the 'value' column (y) is a power of 2 by padding it with zeros if necessary. This operation may be useful in the context of algorithms or computations that are optimized for inputs with a length that is a power of 2, such as some FFT (Fast Fourier Transform) implementations.
+This code ensures that the length of the `value` column (y) is a power of 2 by padding it with zeros if necessary. This operation may be useful in the context of algorithms or computations that are optimized for inputs with a length that is a power of 2, such as some FFT (Fast Fourier Transform) implementations.
 
 # Windowing
 The code applies a Hann window to the time series data represented by the 'value' column in the DataFrame df. The Hann window is a type of tapering function often used in signal processing to reduce spectral leakage when performing operations like the Fast Fourier Transform (FFT). It gradually reduces the amplitude of data points toward the edges, smoothing the data and minimizing artifacts introduced by abrupt transitions at the edges of the signal.
@@ -99,17 +99,12 @@ We used Flake8 for linting our codes. Initially, Flake8 did execute due to the f
 # Unit Testing
 
 
-#
 
 
 # Bibliography:
 1. [Wikipedia](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
 2. [Global Monitoring](https://gml.noaa.gov/)
-3. []()
-4. []()
-5. []()
-6. []()
-7. 
+
 
 
 
