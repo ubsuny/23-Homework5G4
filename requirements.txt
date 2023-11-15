@@ -1,2 +1,4 @@
-pytest
 numpy
+pandas
+scipy==1.7.3
+pytest==6.2.5
