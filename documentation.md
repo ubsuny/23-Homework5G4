@@ -86,14 +86,27 @@ This code visualizes the frequency content of both the original and filtered sig
 # Plot of filtered and raw data
 <img width="529" alt="image" src="https://github.com/sharmistharanit/23-Homework5G4/assets/143737948/ad8ad94f-995e-404a-8a9a-48cfe35eb608">
 
+# Linting
+We used Flake8 for linting our codes. Initially, Flake8 did execute due to the failure to maintain the standard, however, following the suggestion and removing the errors, we linted our **CO2_analysis.py** and **calculate_frequency.py** successfully. Flake8 doesn't give a rating the way Pylint shows rather it shows whether our file was successfully linted or not.  
+**These are the initial errors**
+
+**This is the final outcome:**
 
 
+# Unit Testing
 
 
+#
 
 
-
-
+# Bibliography:
+1. [Wikipedia](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
+2. [Global Monitoring](https://gml.noaa.gov/)
+3. []()
+4. []()
+5. []()
+6. []()
+7. 
 
 
 
