@@ -25,6 +25,7 @@ def fft(x):
     return np.array([even[k] + np.exp(-2j * np.pi * k / N) * odd[k] for k in range(N // 2)] +
                     [even[k] - np.exp(-2j * np.pi * k / N) * odd[k] for k in range(N // 2)])
 
+
 def discrete_transform(data):
     """
     Parameters
@@ -44,7 +45,7 @@ def discrete_transform(data):
             angle = 2 * np.pi * k * j / N
             transform[k] += data[j] * np.exp(1j * angle)
     return transform
-    
+
 
 def find_peak_frequency(X):
     """
