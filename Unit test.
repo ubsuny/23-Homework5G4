@@ -22,7 +22,7 @@ class TestFrequencyIdentification(unittest.TestCase):
     def test_identify_peak_frequency(self):
         # Test the identify_peak_frequency function
         test_freqs = np.array([1, 2, 3, 4, 5])
-        test_signal = np.array([10, 20, 15, 30, 25])
+        test_signal = np.array([10, 20, 15, 30, 20])
         expected_peak_freq = test_freqs[np.argmax(np.abs(test_signal[:len(test_freqs)]))]
         calculated_peak_freq = identify_peak_frequency(test_freqs, test_signal)
         self.assertEqual(expected_peak_freq, calculated_peak_freq)
